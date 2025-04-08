@@ -23,7 +23,7 @@ function Activities() {
         <tbody>
           {activities.map(activity => (
             <tr key={activity._id}>
-              <td>{activity.activity_type}</td>
+              <td>{activity.type}</td>
               <td>{activity.duration}</td>
             </tr>
           ))}
