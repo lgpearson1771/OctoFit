@@ -46,10 +46,10 @@ class Command(BaseCommand):
         ]
         Activity.objects.bulk_create(activities)
 
-        # Convert Team instances to dictionaries for the 'team' field in Leaderboard
+        # Pass Team instances directly for the 'team' field in Leaderboard
         leaderboard_entries = [
-            Leaderboard(id=ObjectId(), team=teams[0].__dict__, score=100),
-            Leaderboard(id=ObjectId(), team=teams[1].__dict__, score=90),
+            Leaderboard(id=ObjectId(), team=teams[0], score=100),
+            Leaderboard(id=ObjectId(), team=teams[1], score=90),
         ]
         Leaderboard.objects.bulk_create(leaderboard_entries)
 
